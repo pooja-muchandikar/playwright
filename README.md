@@ -24,3 +24,9 @@ Used Framewrok
 
 ## To check debug log
 `npx playwright test -- --debug`
+
+## To check test results in HTML Report
+`npx playwright test -- --reporter=html`
+
+## To view the HTML Report
+`npx playwright show-report`
