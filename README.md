@@ -11,7 +11,7 @@ Used Framewrok
 ## Alternative Installation Steps
 `npx playwright install`
 
-`npx playwright install-deps`
+`npx playwright install-deps`(system dependancies get's automatically installed and useful for CI environments)
 
 ## Run Command
 `npx playwright test`
