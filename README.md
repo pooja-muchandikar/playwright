@@ -8,6 +8,11 @@ Used Framewrok
 
 `npm install -D @playwright/test`
 
+## Alternative Installation Steps
+`npx playwright install`
+
+`npx playwright install-deps`
+
 ## Run Command
 `npx playwright test`
 
