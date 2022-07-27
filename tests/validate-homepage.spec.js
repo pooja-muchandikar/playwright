@@ -1,5 +1,9 @@
 import { test, expect } from "@playwright/test";
 //import { loginUser } from "../utils/loginUser.spec";
+const dotenv = require( 'dotenv' )
+dotenv.config()
+
+
 
 test.describe( "Demo Test", () => {
   test( "Validate Homepage", async ({
@@ -9,9 +13,9 @@ test.describe( "Demo Test", () => {
     //await loginUser();
     await page.goto("https://pooja-rtmedia.rt.gw/wp-admin");
 
-    await page.type( "#user_login", "automation" );
+    await page.type( "#user_login", process.env.USERNAME );
 
-    await page.type( "#user_pass", "Xh68wNVw6c90" );
+    await page.type( "#user_pass", process.env.PASSWORD );
 
     await page.click("#wp-submit");
 
