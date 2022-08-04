@@ -5,7 +5,7 @@ dotenv.config();
 test.describe( 'Demo Test', () => {
   test( 'Create a new page', async ( { page } ) => {
     //await loginUser();
-    await page.goto("https://pooja-rtmedia.rt.gw/wp-admin");
+    await page.goto("enter your site URL");
 
     await page.type("#user_login", process.env.USERNAME);
 
