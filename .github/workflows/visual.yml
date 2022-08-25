@@ -35,8 +35,8 @@ jobs:
               run: npx playwright test visual --reporter=html
 
             - name: Archive HTML Report on failure
-             if: failure()
-             uses: actions/upload-artifact@v1
-             with:
-              name: report
-              path: ./tests/
+              if: failure()
+              uses: actions/upload-artifact@v1
+              with:
+                name: report
+                path: ./tests/
