@@ -32,4 +32,4 @@ jobs:
             - name: Install playwright
               run: npx playwright install
             - name: Run tests
-              run: npx playwright test --reporter=html
+              run: npx playwright test visual --reporter=html
