@@ -18,6 +18,8 @@ jobs:
         # The type of runner that the job will run on
         name: Run playwright test
         runs-on: ubuntu-latest
+        env: 
+          TESULTS_TOKEN: ${{ secrets.TESULTS_TOKEN }}
 
         # Setup node
         steps:
@@ -32,7 +34,7 @@ jobs:
             - name: Install playwright
               run: npx playwright install
             - name: Run tests
-              run: npx playwright test visual --reporter=html
+              run: npx playwright test sample 
 
             - name: Archive HTML Report on failure
               if: failure()
