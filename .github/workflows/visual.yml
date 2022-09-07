@@ -19,7 +19,7 @@ jobs:
         name: Run playwright test
         runs-on: ubuntu-latest
         env: 
-          TESRESULT_TOKEN: ${{ secrets.TESULTS_TOKEN }}
+          TESULTS_TOKEN: ${{ secrets.TESULTS_TOKEN }}
 
         # Setup node
         steps:
