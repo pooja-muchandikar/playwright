@@ -34,7 +34,7 @@ jobs:
             - name: Install playwright
               run: npx playwright install
             - name: Run tests
-              run: npx playwright test sample --reporter=html
+              run: npx playwright test sample 
 
             - name: Archive HTML Report on failure
               if: failure()
