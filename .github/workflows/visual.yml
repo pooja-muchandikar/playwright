@@ -18,6 +18,7 @@ jobs:
         # The type of runner that the job will run on
         name: Run playwright test
         runs-on: ubuntu-latest
+       
 
         # Setup node
         steps:
@@ -28,15 +29,21 @@ jobs:
               with:
                   node-version: 17
             - name: Install npm
-              run: npm install
-            - name: Install playwright
-              run: npx playwright install
+              run: npm install --force
+            - name: Install playwright 
+              run: npx playwright install --force
             - name: Run tests
-              run: npx playwright test visual --reporter=html
+              run: npx playwright test sample.spec.js --project replay-chromium --reporter=@replayio/playwright/reporter,line 
 
             - name: Archive HTML Report on failure
               if: failure()
               uses: actions/upload-artifact@v1
               with:
                 name: report
-                path: ./tests/test/playwright-report
+                path: ./tests/
+
+            - name: Upload replays
+              if: ${{ always() }}
+              uses: replayio/action-upload@v0.4.4
+              with:
+                api-key: ${{ secrets.RECORD_REPLAY_API_KEY }}
